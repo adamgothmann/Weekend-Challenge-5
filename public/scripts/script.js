@@ -5,6 +5,7 @@ var myApp=angular.module( 'myApp', [] );
 myApp.controller( 'animalController', [ '$scope', '$http', function( $scope, $http ){
   $scope.addAnimal = function(){
     event.preventDefault();
+    //creates object of input fields
     var objectToSend = {
       name: $scope.nameInput,
       animal: $scope.animalInput,

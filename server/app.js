@@ -30,6 +30,7 @@ app.get( '/getRecords', function( req, res ){
 
 app.post('/sendAnimal', function(req, res){
 console.log('in sendAnimal');
+console.log(req.body);
 
 // var objectToAdd = {
 //   name: req.body.name,
