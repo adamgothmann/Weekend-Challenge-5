@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Weekend Project 05</title>
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h2>Welcome!!</h2>
+    <p>Use the input fields to enter the name, age, animal, and image URL of your pet.</p>
+    <div ng-controller="animalController">
+      <input type="text" ng-model="nameInput" placeholder="Enter name">
+      <input type="text" ng-model="animalInput" placeholder="Enter animal">
+      <input type="text" ng-model="ageInput" placeholder="Enter age">
+      <input type="text" ng-model="urlInput" placeholder="Enter url">
+      <button type="button" ng-click="addAnimal()" name="button">Submit animal</button>
+      <!-- <p ng-repeat -->
+    </div>
+  </body>
+</html>
