@@ -10,7 +10,7 @@ myApp.controller( 'animalController', [ '$scope', '$http', function( $scope, $ht
       name: $scope.nameInput,
       animal: $scope.animalInput,
       age: $scope.ageInput,
-      url: $scope.urlInput
+      image_url: $scope.urlInput
     };
     console.log(objectToSend);
     //sends object to server

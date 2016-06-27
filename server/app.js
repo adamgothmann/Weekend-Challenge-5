@@ -9,7 +9,7 @@ var Animal = require('../models/animalCreate');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 app.use(bodyParser.json());
 
-mongoose.connect('localhost:/27017/weekend_Assignment');
+mongoose.connect('mongodb://localhost:27017/weekend_Assignment');
 
 // base url
 app.get( '/', function( req, res ){
@@ -38,7 +38,7 @@ var newAnimal = new Animal({
   name: req.body.name,
   animal: req.body.animal,
   age: req.body.age,
-  url: req.body.url
+  image_url: req.body.image_url
 });
 newAnimal.save(function(err) { //saves object to database
     if(err){
