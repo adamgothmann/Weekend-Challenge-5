@@ -6,6 +6,9 @@ var mongoose = require('mongoose');
 
 var Animal = require('../models/animalCreate');
 
+var urlencodedParser = bodyParser.urlencoded({extended: false});
+app.use(bodyParser.json());
+
 mongoose.connect('localhost:/27017/weekend_Assignment');
 
 // base url
@@ -21,7 +24,7 @@ app.listen(8080, 'localhost', function(req, res){
 // static folder
 app.use( express.static('public') );
 
-app.get( '/getRecords', function( req, res ){
+app.get( '/getAnimals', function( req, res ){
   Animal.find()
   .then( function( data ){
     res.send( data );
@@ -30,12 +33,22 @@ app.get( '/getRecords', function( req, res ){
 
 app.post('/sendAnimal', function(req, res){
 console.log('in sendAnimal');
-console.log(req.body);
+//makes a new object to put in the database
+var newAnimal = new Animal({
+  name: req.body.name,
+  animal: req.body.animal,
+  age: req.body.age,
+  url: req.body.url
+});
+newAnimal.save(function(err) { //saves object to database
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    }else{
+      console.log('Assignment saved');
+      res.sendStatus(200);
+    }
+  });
 
-// var objectToAdd = {
-//   name: req.body.name,
-//   animal: req.body.animal,
-//   age: req.body.age,
-//   url: req.body.url
-// };
+console.log(newAnimal);
 });
