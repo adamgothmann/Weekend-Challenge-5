@@ -37,4 +37,7 @@ myApp.controller( 'animalController', [ '$scope', '$http', function( $scope, $ht
        console.log( response.statusText );
      };
    }; // end getRecords
+   $scope.delete = function(){
+$scope.allTheRecords.splice(0, 1);
+   };
 }]);//end controller

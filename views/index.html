@@ -18,8 +18,8 @@
         <button type="button" ng-click="addAnimal()" name="button">Submit animal</button>
       </form>
       <button type="button" ng-click="showAnimals()">Show animals</button>
-      <p ng-repeat="show in allTheRecords">Name: {{show.name}}, Animal: {{show.animal}}, Age: {{show.age}}
-      <br><img ng-src="{{show.image_url}}"/></p>
+      <p ondragstart="drag(event)" draggable="true" id="{{$index}}" ng-repeat="show in allTheRecords">Name: {{show.name}}, Animal: {{show.animal}}, Age: {{show.age}}
+      <br><img ng-src="{{show.image_url}}"/><button type="button" name="button" ng-click="delete">Delete</button></p>
     </div>
   </body>
 </html>
